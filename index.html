@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/styles.css" />
+  <title>Dice Roller</title>
+</head>
+<body>
+  <h1>Dice Roller</h1>
+  <div id="app">
+	<p>
+	Let's get rollin'! Select a dice you wish to roll. <br> <br>
+	   <button v-on:click="fourSides"><img src="4sides.png"> <br> 4 Sides </button>
+  	   <button v-on:click="sixSides"><img src="6sides.png"> <br> 6 Sides </button>
+	   <button v-on:click="eightSides"><img src="8sides.png"> <br> 8 Sides </button>
+	   <button v-on:click="tenSides"><img src="10sides.png"> <br> 10 Sides </button>
+	   <button v-on:click="twelveSides"><img src="12sides.png"> <br> 12 Sides </button>
+	   <button v-on:click="twentySides"><img src="20sides.png"> <br> 20 Sides </button>
+           <br>   
+	</p>
+	<p>
+	Current Dice size: {{max}}  <img v-bind:src="currentImg">
+	<br> <br> <hr>
+
+        Now, add any bonuses or penalties to the roll. <br> <br>
+	Current Bonus:
+	      <input v-model="addedVal" type="number" placeholder="0">
+	      <br> <br>
+	      Current Penalty:
+	      <input v-model="subbedVal" type="number" placeholder="0">
+
+	      <br><br> <hr>
+	   Alright! Push the button to roll. Output is "roll + bonus + penalty = total" <br>
+	   <br>
+	   <button v-on:click="roll">Roll!!!</button>
+	   result: {{rollResult}} + {{addedVal}} - {{subbedVal}} = {{result}} <br> <hr>  
+	</p>
+  </div>
+
+
+
+
+<div class="footer">
+	<p> <a href="https://github.com/SeaSaltSunset/creative3">Link to Github Repository</a></p>
+</div>
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="vuePage.js"></script> 
+</body>
+
+</html>
